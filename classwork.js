@@ -22,7 +22,7 @@ function exercise2() {
 
   let totalCostoFPen = costoFPens * amountoFPenBought;
   let totalCostoFNotebook = costoFNotebook * amountoFNotebookBought;
-  let totalCost = totalCostoFPen + totalCostoFNotebook;
+  let plus = totalCostoFPen + totalCostoFNotebook;
   return plus;
 }
 let worth = exercise2();
