@@ -5,11 +5,8 @@ function exercise1() {
   let diffferenceInAge = amaraAgeBe - tundeAgeBe;
   let totalAge = amaraAgeBe + tundeAgeBe;
 
-  let report = "<div class='budget-card'>";
-  report += `<p> difference in age:<b> ${diffferenceInAge} </b></p>`;
-  report += `<p> totalAge:<b> ${totalAge} </b></p>`;
-  report += `</div>`;
-  return plus;
+  let report = `Difference in age: ${diffferenceInAge} totalAge: ${totalAge}`;
+  return report;
 }
 let value = exercise1();
 console.log(value);
@@ -22,8 +19,14 @@ function exercise2() {
 
   let totalCostoFPen = costoFPens * amountoFPenBought;
   let totalCostoFNotebook = costoFNotebook * amountoFNotebookBought;
-  let plus = totalCostoFPen + totalCostoFNotebook;
-  return plus;
+  let totalCost = totalCostoFPen + totalCostoFNotebook;
+
+  let totalPrize = `total cost of pen: ${totalCostoFPen} and total cost of book: ${totalCostoFNotebook} so total cost: ${totalCost  }`;
+  return totalPrize;
 }
 let worth = exercise2();
-console.log(worth);
+console.log(worth); 
+
+
+
+
