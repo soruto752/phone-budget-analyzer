@@ -36,49 +36,48 @@
     <div id="output"></div>
 
     <script>
-      function  codework() {
-          const monthlyBudget=4500;
-          const airtimePricePerMinute=15;
-          const DataPricePerMB=2;
-          let minuteUsed=120;
-          let dataUsedMb=1850;
+      function codework() {
+        const monthlyBudget = 4500;
+        const airtimePricePerMinute = 15;
+        const DataPricePerMB = 2;
+        let minuteUsed = 120;
+        let dataUsedMb = 1850;
 
-         let totalAirtimeCost = minutesUsed * airtimePricePerMinute;
-         let totalDataCost = dataUsedMB * dataPricePerMB;
-         let totalSpent = TotalAirtimeCost + totaDataCost;
-         let moneyRemaining = monthlyBudget - totalSpent;
-         let percentageUsed = (totalspent / monthlyBudget) * 100;
+        let totalAirtimeCost = minutesUsed * airtimePricePerMinute;
+        let totalDataCost = dataUsedMB * dataPricePerMB;
+        let totalSpent = TotalAirtimeCost + totaDataCost;
+        let moneyRemaining = monthlyBudget - totalSpent;
+        let percentageUsed = (totalspent / monthlyBudget) * 100;
 
-         myComment;
+        myComment;
 
-        if (money remaining >= 1000) {//error
-            myComment = "great! you are under budget this month ";
+        if (moneyremaining >= 1000) {
+          //error
+          myComment = "great! you are under budget this month ";
+        } else if (moneyremaining >= 300) {
+          //error
+          myComment = "Okay! you are close to budget.";
+        } else {
+          //error
+          myComment = "you are almost out of budget. be careful next month!";
+        }
 
-      } else if (money remaining >= 300) { //error
-           myComment = "Okay! you are close to budget.";
-
-         } else {//error
-            myComment = "you are almost out of budget. be careful next month!";
-          }
-
-            let report = "<div class ='report'>";
-                report += `<p>monthly budget:<b> ${monthlyBudget}</b></p>`;
-                report += `<p> minute used: <b> ${minuteUsed}</b>seconds</p>`;
-                report += `<p> airtime cost: <b> ${totalAirtimeCost}</b>naira</p>`;
-                report += `<p> data used:<b> ${dataUsedMb}</b>MB</p>`;
-                report += "<hr>";
-                report += `<p> data cost:<b> ${totalDataCost}</b></p>`;
-                report += `<p> total spent:<b> ${totalSpent}</b></p>`;
-                report += `<p> money remaining :<b> ${moneyRemaining}</b></p>`;
-                report += `<p> percentage:<b> ${percentageUsed}</b></p>`;
-                 report +=
-                myComment +
-          "</strong></p>";
+        let report = "<div class ='report'>";
+        report += `<p>monthly budget:<b> ${monthlyBudget}</b></p>`;
+        report += `<p> minute used: <b> ${minuteUsed}</b>seconds</p>`;
+        report += `<p> airtime cost: <b> ${totalAirtimeCost}</b>naira</p>`;
+        report += `<p> data used:<b> ${dataUsedMb}</b>MB</p>`;
+        report += "<hr>";
+        report += `<p> data cost:<b> ${totalDataCost}</b></p>`;
+        report += `<p> total spent:<b> ${totalSpent}</b></p>`;
+        report += `<p> money remaining :<b> ${moneyRemaining}</b></p>`;
+        report += `<p> percentage:<b> ${percentageUsed}</b></p>`;
+        report += myComment + "</strong></p>";
         report += "</div>";
 
         document.getElementById("output").innerHTML = report;
-            }
-            codework();
+      }
+      codework();
     </script>
   </body>
 </html>

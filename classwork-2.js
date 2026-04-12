@@ -12,4 +12,8 @@ function exercise() {
   } else if (lower <= 12500) {
     myComment = "normal!";
   }
+
+  return higher;
 }
+let worth = exercise();
+console.log(worth);
