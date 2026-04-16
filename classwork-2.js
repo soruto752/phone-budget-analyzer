@@ -7,13 +7,8 @@ function exercise() {
   let moreThanUnits = unitsMoreThan100 * 85;
   let totalElectricitySPENT = firstUnits + moreThanUnits;
 
-  if (higher >= 12500) {
-    myComment = "too high ";
-  } else if (lower <= 12500) {
-    myComment = "normal!";
-  }
-
-  return higher;
+  let electricitycomment = `the total bill is ${totalElectricitySPENT} it is a normal bill`;
+  return electricitycomment;
 }
 let worth = exercise();
 console.log(worth);
