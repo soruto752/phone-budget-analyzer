@@ -9,7 +9,10 @@ function problem() {
   //part 3
   let ferterlizerprice = 185000;
   discountamount = 0.15;
-
+  //part 4
+  labourperprice = 420000;
+  // part 5
+  tranportprice = 95000;
 
   let differenceInRainfull = idealRainfall - expectedRainfall;
   let amoutof50 = differenceInRainfull / 50;
@@ -20,10 +23,18 @@ function problem() {
   // part 2
   let marketmoney = marketcost * eighthectar;
   //part 3
-  let feterlizercost =    feterlizerprice * farmlandAmount;
-  let amouwithdiscount =  feterlizercost * discountamount;
-
-  hectar = `this years hectar is ${eighthectar.toFixed(2)}  for the second part market money is ${marketmoney}  and the feterlizer costs are ${feterlizercost},${amouwithdiscount} ` ;
+  let feterlizercost = feterlizerprice * farmlandAmount;
+  let amouwithdiscount = feterlizercost * discountamount;
+  // part 4
+  let labourtotalcost = labourperprice - farmlandAmout;
+  //part 5
+  let tranportcost = tranportprice * eighthectar;
+  //part 6
+  let seasoncost = amouwithdiscount + labourtotalcost + tranportcost;
+  //part 7
+  let net = marketmoney - seasoncost;
+  let profitmarginmargin = (net / marketmoney) * 100;
+  hectar = `this years hectar is ${eighthectar.toFixed(2)}  for the second part market money is ${marketmoney}  and the feterlizer costs are ${feterlizercost},${amouwithdiscount} `;
   return hectar;
 }
 let worth = problem();
