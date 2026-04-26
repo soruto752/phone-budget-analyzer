@@ -36,6 +36,7 @@
         //part 3
         let feterlizercost = feterlizerprice * farmlandAmount;
         let amouwithdiscount = feterlizercost * discountamount;
+        let finalamout = feterlizercost - amouwithdiscount;
         // part 4
         let labourtotalcost = labourperprice - farmlandAmout;
         //part 5
@@ -44,11 +45,22 @@
         let seasoncost = amouwithdiscount + labourtotalcost + tranportcost;
         //part 7
         let net = marketmoney - seasoncost;
-        let profitmarginmargin = (net / marketmoney) * 100;
+        let profitmargin = (net / marketmoney) * 100;
 
         let reportHTML = `<div class="report">`;
-        reportHTML += `<h2>Cocoa Farm Report</h2>
-<p><strong>Farm Size:</strong> </p>`;
+        reportHTML += `<p>Farm Size:<strong> ${farmlandAmout}</strong></p>`;
+        reportHTML += `<p>Expected yield:<strong> ${eighthectar}</strong></p>`;
+        report += `<p>Gross Revenue:<strong> ${marketmoney}</strong></p>`;
+        report += `<p> feterlizer cost: <strong> ${finalamout}</strong></p> `;
+        report += "<hr>";
+        report += `<p> Labor & Harvesting Cost: <strong> ${labourtotalcost}</strong></p>`;
+        report += `<p> Drying & Transport Cost: <strong> ${tranportcost}</strong></p>`;
+        report += ` <p> Total Production Cost: <strong> ${seasoncost}</strong></p>`;
+        report += ` <p> net profit: <strong> ${net}</strong></p>`;
+        report += ` <p> profit margin: <strong> ${profitmargin}</strong></p>`;
+        report += "<p> season perfomace: <strong> it was fair</strong></p>";
+
+        document.getElementById("report").innerHTML = reportHTML;
       }
     </script>
   </body>
