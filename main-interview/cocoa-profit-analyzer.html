@@ -3,38 +3,57 @@
   <head>
     <title>cocoa-farm-interview</title>
     <style></style>
-    <form></form>
   </head>
+  <form>
+    <label> farmland amount</label>
+    <input type="text" placeholder=" your farmland " id="farmland" />
+    <label> rainfall</label>
+    <input type="text" placeholder=" your rainfall " id="rainfall" />
+    <label>market price</label>
+    <input type="text" placeholder="  your  market cost" id="market" />
+    <label>feterlizer price</label>
+    <input type="text" placeholder=" your feterlizer price " id="feterlizer" />
+    <label>labour price</label>
+    <input type="text" placeholder=" your labour price " id="labour" />
+    <label> transport price</label>
+    <input type="text" placeholder=" your transport price " id="transport" />
+  </form>
   <body>
     <h1>Nigerian-Cocoa-Farm</h1>
     <div id="output"></div>
+    <button
+      style="background-color: brown; color: white"
+      onclick="cocoafacts()"
+    >
+      caluclate
+    </button>
     <script>
       function cocoafacts() {
-        let farmlandAmout = 8; //hectars
-        let cocoaPerHectar = 1.2; //tons
-        let expectedRainfall = 720; //mm
+        let farmlandAmout = document.getElementById("farmland").value; //hectars
+        let goodyearcocoaperhectar = 1.2; //tons
+        let expectedRainfall = document.getElementById("rainfall").value; //mm
         let idealRainfall = 900; //mm
         let yieldpercentagedecrease = 2;
         //part 2
-        let marketcost = 1850000;
+        let marketcost = document.getElementById("market").value;
         //part 3
-        let ferterlizerprice = 185000;
+        let ferterlizerprice = document.getElementById("feterlizer").value;
         discountamount = 0.15;
         //part 4
-        labourperprice = 420000;
+        labourperprice = document.getElementById("labour").value;
         // part 5
-        tranportprice = 95000;
+        tranportprice = document.getElementById("transport").value;
 
         let differenceInRainfull = idealRainfall - expectedRainfall;
         let amoutof50 = differenceInRainfull / 50;
         let yielddecrease = (amoutof50 * yieldpercentagedecrease) / 100;
-        let yielddecrease2 = cocoaPerHectar * yielddecrease;
-        let thisyear1hectar = cocoaPerHectar - yielddecrease2;
+        let yielddecrease2 = goodyearcocoaperhectar * yielddecrease;
+        let thisyear1hectar = goodyearcocoaperhectar - yielddecrease2;
         let eighthectar = thisyear1hectar * farmlandAmout;
         // part 2
         let marketmoney = marketcost * eighthectar;
         //part 3
-        let feterlizercost = feterlizerprice * farmlandAmount;
+        let feterlizercost = ferterlizerprice * farmlandAmout;
         let amouwithdiscount = feterlizercost * discountamount;
         let finalamout = feterlizercost - amouwithdiscount;
         // part 4
@@ -47,21 +66,22 @@
         let net = marketmoney - seasoncost;
         let profitmargin = (net / marketmoney) * 100;
 
-        let reportHTML = `<div class="report">`;
-        reportHTML += `<p>Farm Size:<strong> ${farmlandAmout}</strong></p>`;
-        reportHTML += `<p>Expected yield:<strong> ${eighthectar}</strong></p>`;
-        report += `<p>Gross Revenue:<strong> ${marketmoney}</strong></p>`;
-        report += `<p> feterlizer cost: <strong> ${finalamout}</strong></p> `;
+        let report = `<div class="report">`;
+        report += `<p>Farm Size:<strong> ${farmlandAmout}</strong></p>`;
+        report += `<p>Expected yield:<strong> ${eighthectar.toFixed(2)}</strong></p>`;
+        report += `<p>Gross Revenue:<strong> &#8358 ${marketmoney.toLocaleString()}</strong></p>`;
+        report += `<p> feterlizer cost: <strong> &#8358 ${finalamout.toLocaleString()}</strong></p> `;
         report += "<hr>";
-        report += `<p> Labor & Harvesting Cost: <strong> ${labourtotalcost}</strong></p>`;
-        report += `<p> Drying & Transport Cost: <strong> ${tranportcost}</strong></p>`;
-        report += ` <p> Total Production Cost: <strong> ${seasoncost}</strong></p>`;
-        report += ` <p> net profit: <strong> ${net}</strong></p>`;
-        report += ` <p> profit margin: <strong> ${profitmargin}</strong></p>`;
-        report += "<p> season perfomace: <strong> it was fair</strong></p>";
+        report += `<p> Labor & Harvesting Cost: <strong> &#8358 ${labourtotalcost.toLocaleString()}</strong></p>`;
+        report += `<p> Drying & Transport Cost: <strong> &#8358 ${tranportcost.toLocaleString()}</strong></p>`;
+        report += ` <p> Total Production Cost: <strong> &#8358 ${seasoncost.toLocaleString()}</strong></p>`;
+        report += ` <p> net profit: <strong> &#8358 ${net.toLocaleString()}</strong></p>`;
+        report += ` <p> profit margin: <strong> ${profitmargin.toFixed(2)}</strong></p>`;
+        report += "<p> season perfomace: <strong> it was fair </strong></p>";
 
-        document.getElementById("report").innerHTML = reportHTML;
+        document.getElementById("output").innerHTML = report;
       }
+      cocoafacts();
     </script>
   </body>
 </html>
